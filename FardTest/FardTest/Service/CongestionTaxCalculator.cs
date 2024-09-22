@@ -15,69 +15,88 @@ namespace FardTest.Service
             _vehicleService = vehicleService;
         }
 
-        public List<decimal> CalculateTaxes(Vehicle vehicle, DateTime[] entryTimes, string city)
-        {
-            var taxes = new List<decimal>();
 
-            // Return a list of zeroes if the vehicle is toll-free
+        public int GetTax(Vehicle vehicle, DateTime[] dates, string city)
+        {
+            if (dates == null || dates.Length == 0) return 0;
+
+            // Check if the vehicle is toll-free
             if (_vehicleService.IsTollFreeVehicle(vehicle))
             {
-                return entryTimes.Select(_ => 0m).ToList();
+                return 0; // No tax for toll-free vehicles
             }
 
-            decimal totalTax = 0;
-            DateTime intervalStart = entryTimes[0];
+            DateTime intervalStart = dates[0];
+            int totalFee = 0;
 
-            foreach (var entryTime in entryTimes.OrderBy(d => d))
+            foreach (var date in dates.OrderBy(d => d))
             {
-                // Skip toll-free dates or toll-free month (July)
-                if (IsWeekend(entryTime) || IsTollFreeMonth(entryTime))
+                // Skip toll-free dates
+                if (IsTollFreeDate(date))
                 {
-                    taxes.Add(0); // No tax on weekends or in July
-                    continue;
+                    continue; // No tax for toll-free dates
                 }
 
-                decimal nextTax = _taxRuleService.GetTollAmount(entryTime, city);
-                decimal currentTax = _taxRuleService.GetTollAmount(intervalStart, city);
+                int nextFee = _taxRuleService.GetTollAmount(date, city);
+                int intervalStartFee = _taxRuleService.GetTollAmount(intervalStart, city);
 
-                if (IsWithinSameHour(intervalStart, entryTime))
+                // Calculate time difference in minutes
+                TimeSpan timeDifference = date - intervalStart;
+                double minutesDifference = timeDifference.TotalMinutes;
+
+                if (minutesDifference <= 60)
                 {
-                    // Use the highest tax within the same hour
-                    totalTax -= currentTax;
-                    totalTax += Math.Max(currentTax, nextTax);
+                    // Use the higher fee within the same hour
+                    totalFee -= intervalStartFee;
+                    totalFee += Math.Max(intervalStartFee, nextFee);
                 }
                 else
                 {
-                    totalTax += nextTax;
-                    intervalStart = entryTime; // Reset interval start to current entry time
+                    // If more than 60 minutes, reset interval start
+                    totalFee += nextFee;
+                    intervalStart = date;
                 }
 
-                // Apply daily cap of 60 SEK
-                totalTax = Math.Min(totalTax, 60);
-
-                // Add the current tax to the list
-                taxes.Add(nextTax);
+                // Cap the total fee for the day at 60 SEK
+                if (totalFee >= 60)
+                {
+                    return 60; // Cap reached
+                }
             }
 
-            return taxes;
+            return totalFee;
         }
-
-        private bool IsTollFreeMonth(DateTime date)
+        private bool IsTollFreeDate(DateTime date)
         {
-            // The entire month of July is toll-free
-            return date.Month == 7;
+            int year = date.Year;
+            int month = date.Month;
+            int day = date.Day;
+
+            // Toll-free on weekends
+            if (date.DayOfWeek == DayOfWeek.Saturday || date.DayOfWeek == DayOfWeek.Sunday)
+                return true;
+
+            // Toll-free for the entire month of July
+            if (month == 7)
+                return true;
+
+            // Toll-free specific dates in 2013
+            if (year == 2013)
+            {
+                if (month == 1 && day == 1 ||
+                    month == 3 && (day == 28 || day == 29) ||
+                    month == 4 && (day == 1 || day == 30) ||
+                    month == 5 && (day == 1 || day == 8 || day == 9) ||
+                    month == 6 && (day == 5 || day == 6 || day == 21) ||
+                    month == 11 && day == 1 ||
+                    month == 12 && (day == 24 || day == 25 || day == 26 || day == 31))
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
-        private bool IsWeekend(DateTime date)
-        {
-            return date.DayOfWeek == DayOfWeek.Saturday
-                || date.DayOfWeek == DayOfWeek.Sunday;
-        }
-
-
-        private bool IsWithinSameHour(DateTime intervalStart, DateTime currentDateTime)
-        {
-            return (currentDateTime - intervalStart).TotalMinutes <= 60;
-        }
     }
 }
