@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{FD9FC918-1E3E-4A05-8451-C9460B5E3AF7}|FardTest\\FardTest.csproj|solutionrelative:fardtest\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{FD9FC918-1E3E-4A05-8451-C9460B5E3AF7}|FardTest\\FardTest.csproj|c:\\users\\laptopkhob.ir\\desktop\\gitprojects\\congestion-tax-calculator\\fardtest\\fardtest\\service\\contracts\\icongestiontaxcalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD9FC918-1E3E-4A05-8451-C9460B5E3AF7}|FardTest\\FardTest.csproj|solutionrelative:fardtest\\service\\contracts\\icongestiontaxcalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{FD9FC918-1E3E-4A05-8451-C9460B5E3AF7}|FardTest\\FardTest.csproj|c:\\users\\laptopkhob.ir\\desktop\\gitprojects\\congestion-tax-calculator\\fardtest\\fardtest\\service\\congestiontaxcalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FD9FC918-1E3E-4A05-8451-C9460B5E3AF7}|FardTest\\FardTest.csproj|solutionrelative:fardtest\\service\\congestiontaxcalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -17,10 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{FD9FC918-1E3E-4A05-8451-C9460B5E3AF7}|FardTest\\FardTest.csproj|c:\\users\\laptopkhob.ir\\desktop\\gitprojects\\congestion-tax-calculator\\fardtest\\fardtest\\service\\taxruleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FD9FC918-1E3E-4A05-8451-C9460B5E3AF7}|FardTest\\FardTest.csproj|solutionrelative:fardtest\\service\\taxruleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FD9FC918-1E3E-4A05-8451-C9460B5E3AF7}|FardTest\\FardTest.csproj|c:\\users\\laptopkhob.ir\\desktop\\gitprojects\\congestion-tax-calculator\\fardtest\\fardtest\\service\\repositories\\icongestiontaxcalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FD9FC918-1E3E-4A05-8451-C9460B5E3AF7}|FardTest\\FardTest.csproj|solutionrelative:fardtest\\service\\repositories\\icongestiontaxcalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,7 +46,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "VehicleService.cs",
               "DocumentMoniker": "C:\\Users\\LaptopKhob.ir\\Desktop\\GitProjects\\Congestion-Tax-Calculator\\FardTest\\FardTest\\Service\\VehicleService.cs",
               "RelativeDocumentMoniker": "FardTest\\Service\\VehicleService.cs",
@@ -59,7 +59,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "TaxRuleService.cs",
               "DocumentMoniker": "C:\\Users\\LaptopKhob.ir\\Desktop\\GitProjects\\Congestion-Tax-Calculator\\FardTest\\FardTest\\Service\\TaxRuleService.cs",
               "RelativeDocumentMoniker": "FardTest\\Service\\TaxRuleService.cs",
@@ -72,20 +72,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "ICongestionTaxCalculator.cs",
-              "DocumentMoniker": "C:\\Users\\LaptopKhob.ir\\Desktop\\GitProjects\\Congestion-Tax-Calculator\\FardTest\\FardTest\\Service\\Repositories\\ICongestionTaxCalculator.cs",
-              "RelativeDocumentMoniker": "FardTest\\Service\\Repositories\\ICongestionTaxCalculator.cs",
-              "ToolTip": "C:\\Users\\LaptopKhob.ir\\Desktop\\GitProjects\\Congestion-Tax-Calculator\\FardTest\\FardTest\\Service\\Repositories\\ICongestionTaxCalculator.cs",
-              "RelativeToolTip": "FardTest\\Service\\Repositories\\ICongestionTaxCalculator.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAOAAAA",
+              "DocumentMoniker": "C:\\Users\\LaptopKhob.ir\\Desktop\\GitProjects\\Congestion-Tax-Calculator\\FardTest\\FardTest\\Service\\Contracts\\ICongestionTaxCalculator.cs",
+              "RelativeDocumentMoniker": "FardTest\\Service\\Contracts\\ICongestionTaxCalculator.cs",
+              "ToolTip": "C:\\Users\\LaptopKhob.ir\\Desktop\\GitProjects\\Congestion-Tax-Calculator\\FardTest\\FardTest\\Service\\Contracts\\ICongestionTaxCalculator.cs",
+              "RelativeToolTip": "FardTest\\Service\\Contracts\\ICongestionTaxCalculator.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-23T05:01:21.508Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "CongestionTaxCalculator.cs",
               "DocumentMoniker": "C:\\Users\\LaptopKhob.ir\\Desktop\\GitProjects\\Congestion-Tax-Calculator\\FardTest\\FardTest\\Service\\CongestionTaxCalculator.cs",
               "RelativeDocumentMoniker": "FardTest\\Service\\CongestionTaxCalculator.cs",
@@ -104,7 +104,7 @@
               "RelativeDocumentMoniker": "FardTest\\Program.cs",
               "ToolTip": "C:\\Users\\LaptopKhob.ir\\Desktop\\GitProjects\\Congestion-Tax-Calculator\\FardTest\\FardTest\\Program.cs",
               "RelativeToolTip": "FardTest\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAAA2AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-22T19:19:17.06Z",
               "EditorCaption": ""

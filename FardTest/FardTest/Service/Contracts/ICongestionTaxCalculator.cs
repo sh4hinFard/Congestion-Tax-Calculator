@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FardTest.Service.Repositories
+namespace FardTest.Service.Contracts
 {
-    public interface IVehicleService
+    public interface ICongestionTaxCalculator
     {
-        bool IsTollFreeVehicle(Vehicle vehicle);
+        int GetTax(Vehicle vehicle, DateTime[] dates, string city);
     }
 
 }

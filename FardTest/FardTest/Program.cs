@@ -1,7 +1,7 @@
 ﻿using FardTest.Dbcontext;
 using FardTest.Models;
 using FardTest.Service;
-using FardTest.Service.Repositories;
+using FardTest.Service.Contracts;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace FardTest

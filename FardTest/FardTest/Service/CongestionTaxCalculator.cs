@@ -1,5 +1,5 @@
 ﻿using FardTest.Models;
-using FardTest.Service.Repositories;
+using FardTest.Service.Contracts;
 using System;
 using System.Linq;
 
