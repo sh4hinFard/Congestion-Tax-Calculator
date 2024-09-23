@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FardTest.Service
+namespace FardTest.Service.Repositories
 {
     public interface IVehicleService
     {

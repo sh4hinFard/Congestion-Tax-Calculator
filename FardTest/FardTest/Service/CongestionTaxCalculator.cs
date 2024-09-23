@@ -1,10 +1,11 @@
 ﻿using FardTest.Models;
+using FardTest.Service.Repositories;
 using System;
 using System.Linq;
 
 namespace FardTest.Service
 {
-    public class CongestionTaxCalculator
+    public class CongestionTaxCalculator: ICongestionTaxCalculator
     {
         private readonly ITaxRuleService _taxRuleService;
         private readonly IVehicleService _vehicleService;
