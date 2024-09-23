@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FardTest")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d45a24c1027fad1b98ff5c50a53c3637e6401ccc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+374fa2543aa2f088c10b77fc79c55e541bd6d2cd")]
 [assembly: System.Reflection.AssemblyProductAttribute("FardTest")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FardTest")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
